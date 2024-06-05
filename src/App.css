@@ -13,3 +13,6 @@ p, label {
 input {
   margin: 0.4rem;
 }
+.card{
+  width: 18rem;
+}

@@ -1,9 +1,13 @@
 import './App.css'
 import UserForm from "./components/UserForm.tsx";
+import Users from "./components/Users.tsx";
 
 const App = () => (
     <>
-        <UserForm />
+        <div className={'d-flex'}>
+            <UserForm />
+            <Users />
+        </div>
     </>
 );
 
