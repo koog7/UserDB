@@ -6,13 +6,16 @@ interface FormData {
     active: boolean;
     role: string;
 }
+interface DataProps {
+    sendData: (user: FormData) => void;
+}
 
-const UserForm: React.FC = () => {
+const UserForm: React.FC<DataProps> = ({ sendData }) => {
     const [userData, setUserData] = useState<FormData>({
         username: '',
         email: '',
         active: true,
-        role: '1',
+        role: 'User',
     });
 
     const [isActive, setIsActive] = useState<boolean>(true);
@@ -32,11 +35,12 @@ const UserForm: React.FC = () => {
 
     const submitUser = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        sendData(userData);
         setUserData({
             username: '',
             email: '',
             active: true,
-            role: '1',
+            role: 'User',
         })
         console.log(userData);
     };
