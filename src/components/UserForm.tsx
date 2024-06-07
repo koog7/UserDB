@@ -22,13 +22,11 @@ const UserForm: React.FC<DataProps> = ({ sendData }) => {
 
     const formInput = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        console.log({name , value})
         setUserData((userData) => ({ ...userData, [name]: value }));
     };
 
     const checkboxInput = (e: ChangeEvent<HTMLInputElement>) => {
         const { checked } = e.target;
-        console.log({checked})
         setIsActive(checked);
         setUserData((prevData) => ({ ...prevData, active: checked }));
     };
@@ -41,8 +39,7 @@ const UserForm: React.FC<DataProps> = ({ sendData }) => {
             email: '',
             active: true,
             role: 'User',
-        })
-        console.log(userData);
+        });
     };
 
     return (
